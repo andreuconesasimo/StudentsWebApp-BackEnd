@@ -1,0 +1,41 @@
+﻿@section scripts {
+    @Scripts.Render("~/bundles/app")
+}
+
+<div class="page-header">
+    <h1>Student Service</h1>
+</div>
+
+<div class="row">
+    <div class="col-md-4">        
+        <div class="panel-default">            
+            <table class="table" data-bind="foreach: students">
+                <thead>
+                    <tr>
+                        <th>GUID</th>
+                        <th>Name</th>
+                        <th>Surname</th>
+                        <th>DNI</th>
+                        <th>Birth date</th>
+                        <th>Age</th>
+                        <th>Registry date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-bind="text: GUID"></td>
+                        <td data-bind="text: Name"></td>
+                        <td data-bind="text: Surname"></td>
+                        <td data-bind="text: DNI"></td>
+                        <td data-bind="text: BirthDate"></td>
+                        <td data-bind="text: Age"></td>
+                        <td data-bind="text: RegistryDate"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="alert alert-danger" data-bind="visible: error"><p data-bind="text: error"></p></div>
+    </div>
+
+   
+</div>
