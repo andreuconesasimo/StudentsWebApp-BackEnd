@@ -22,7 +22,7 @@ namespace StudentService.Controllers
             try
             {
                 this.studentBL = studentBL;
-                studentBL.SelectFileType(Extension.JSON);
+                studentBL.SelectFileType(Extension.Redis);
                 logger.Debug(MethodBase.GetCurrentMethod().DeclaringType.Name);
             }
             catch (Exception ex)
@@ -33,6 +33,7 @@ namespace StudentService.Controllers
         }
 
         // GET: api/Students
+        [HttpGet]
         public async Task<List<Student>> GetStudents()
         {
             return await Task<List<Student>>.Run(() => ReadAllStudentsAsync().Result);            
@@ -53,6 +54,7 @@ namespace StudentService.Controllers
 
         // GET: api/Students/5
         [ResponseType(typeof(Student))]
+        [HttpGet]
         public async Task<Student> GetStudent(string guid)
         {
             try
@@ -69,7 +71,8 @@ namespace StudentService.Controllers
 
         // PUT: api/Students/5
         [ResponseType(typeof(Student))]
-        public async Task<IHttpActionResult> PutStudent(string guid, Student student)
+        [HttpPut]
+        public async Task<IHttpActionResult> PutStudent(Student student)
         {
             try
             {
@@ -86,6 +89,7 @@ namespace StudentService.Controllers
 
         // POST: api/Students
         [ResponseType(typeof(Student))]
+        [HttpPost]
         public async Task<IHttpActionResult> PostStudent(Student student)
         {
             try
@@ -103,6 +107,7 @@ namespace StudentService.Controllers
 
         // DELETE: api/Students/5
         [ResponseType(typeof(Student))]
+        [HttpDelete]
         public async Task<List<Student>> DeleteStudent(string guid)
         {
             try
@@ -116,11 +121,5 @@ namespace StudentService.Controllers
                 throw new PresentationException(ex.Message);
             }
         }
-
-       
-        //private bool StudentExists(int id)
-        //{
-            
-        //}
     }
 }

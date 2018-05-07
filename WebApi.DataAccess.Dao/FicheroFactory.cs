@@ -36,6 +36,9 @@ namespace WebApi.DataAccess.Dao
                     case Extension.SP:
                         logger.Debug(MethodBase.GetCurrentMethod().DeclaringType.Name + " " + Extension.SQL + " " + LogStrings.Starts);
                         return new StudentSPFile();
+                    case Extension.Redis:
+                        logger.Debug(MethodBase.GetCurrentMethod().DeclaringType.Name + " " + Extension.Redis + " " + LogStrings.Starts);
+                        return new StudentRedisFile();
                     default:
                         logger.Debug(MethodBase.GetCurrentMethod().DeclaringType.Name + " " + Extension.TXT + " " + LogStrings.Starts);
                         return new StudentTxtFile();

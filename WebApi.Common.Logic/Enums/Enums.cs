@@ -12,6 +12,7 @@
         JSON,
         XML,
         SQL,
-        SP
+        SP,
+        Redis
     }
 }
