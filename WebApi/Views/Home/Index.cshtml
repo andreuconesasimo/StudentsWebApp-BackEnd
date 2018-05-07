@@ -9,7 +9,7 @@
 <div class="row">
     <div class="col-md-4">        
         <div class="panel-default">            
-            <table class="table" data-bind="foreach: students">
+            <table class="table" >
                 <thead>
                     <tr>
                         <th>GUID</th>
@@ -21,7 +21,7 @@
                         <th>Registry date</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody data-bind="foreach: students">
                     <tr>
                         <td data-bind="text: GUID"></td>
                         <td data-bind="text: Name"></td>
