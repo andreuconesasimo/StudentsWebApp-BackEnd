@@ -7,7 +7,7 @@ using WebApi.Common.Logic.Properties;
 namespace WebApi.DataAccess.Dao
 {
     public static class FileUtils
-    {
+    {        
         public static void EscribirFichero(string fileContent, string Ruta)
         {
             ILogger logger = new Logger(MethodBase.GetCurrentMethod().DeclaringType);
@@ -25,6 +25,7 @@ namespace WebApi.DataAccess.Dao
                 throw;
             }
             logger.Debug(MethodBase.GetCurrentMethod().DeclaringType.Name + " " + LogStrings.Ends);
-        }                
+        }
+
     }
 }

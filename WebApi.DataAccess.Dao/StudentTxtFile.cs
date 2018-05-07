@@ -32,9 +32,8 @@ namespace WebApi.DataAccess.Dao
             }
             catch (Exception ex)
             {
-                DAOException dAOException = new DAOException(ex.Message, ex.InnerException);
-                logger.Exception(dAOException);
-                throw;
+                logger.Exception(ex);
+                throw new DAOException(ex.Message, ex.InnerException);
             }
         }
 
@@ -48,9 +47,8 @@ namespace WebApi.DataAccess.Dao
             }
             catch (Exception ex)
             {
-                DAOException dAOException = new DAOException(ex.Message, ex.InnerException);
-                logger.Exception(dAOException);
-                throw;
+                logger.Exception(ex);
+                throw new DAOException(ex.Message, ex.InnerException);
             }
         }
         #endregion
@@ -70,9 +68,8 @@ namespace WebApi.DataAccess.Dao
             }
             catch (Exception ex)
             {
-                DAOException dAOException = new DAOException(ex.Message, ex.InnerException);
-                logger.Exception(dAOException);
-                throw;
+                logger.Exception(ex);
+                throw new DAOException(ex.Message, ex.InnerException);
             }
         }
 
@@ -95,9 +92,8 @@ namespace WebApi.DataAccess.Dao
             }
             catch (Exception ex)
             {
-                DAOException dAOException = new DAOException(ex.Message, ex.InnerException);
-                logger.Exception(dAOException);
-                throw;
+                logger.Exception(ex);
+                throw new DAOException(ex.Message, ex.InnerException);
             }
         }
 
@@ -122,9 +118,8 @@ namespace WebApi.DataAccess.Dao
             }
             catch (Exception ex)
             {
-                DAOException dAOException = new DAOException(ex.Message, ex.InnerException);
-                logger.Exception(dAOException);
-                throw;
+                logger.Exception(ex);
+                throw new DAOException(ex.Message, ex.InnerException);
             }
         }
 
@@ -140,9 +135,8 @@ namespace WebApi.DataAccess.Dao
             }
             catch (Exception ex)
             {
-                DAOException dAOException = new DAOException(ex.Message, ex.InnerException);
-                logger.Exception(dAOException);
-                throw;
+                logger.Exception(ex);
+                throw new DAOException(ex.Message, ex.InnerException);
             }
         }
 
@@ -162,9 +156,8 @@ namespace WebApi.DataAccess.Dao
             }
             catch (Exception ex)
             {
-                DAOException dAOException = new DAOException(ex.Message, ex.InnerException);
-                logger.Exception(dAOException);
-                throw;
+                logger.Exception(ex);
+                throw new DAOException(ex.Message, ex.InnerException);
             }
         }
 
@@ -185,9 +178,8 @@ namespace WebApi.DataAccess.Dao
             }
             catch (Exception ex)
             {
-                DAOException dAOException = new DAOException(ex.Message, ex.InnerException);
-                logger.Exception(dAOException);
-                throw;
+                logger.Exception(ex);
+                throw new DAOException(ex.Message, ex.InnerException);
             }
         }
         #endregion
@@ -208,9 +200,8 @@ namespace WebApi.DataAccess.Dao
             }
             catch (Exception ex)
             {
-                DAOException dAOException = new DAOException(ex.Message, ex.InnerException);
-                logger.Exception(dAOException);
-                throw;
+                logger.Exception(ex);
+                throw new DAOException(ex.Message, ex.InnerException);
             }
         } 
         #endregion
