@@ -37,6 +37,7 @@
       <HintPath>..\packages\StackExchange.Redis.1.2.6\lib\net46\StackExchange.Redis.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.IO.Compression" />
     <Reference Include="System.Xml.Linq" />
@@ -54,6 +55,7 @@
     <Compile Include="ListadoAlumnosJson.cs" />
     <Compile Include="ListadoAlumnosXml.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RedisStore.cs" />
     <Compile Include="StudentJsonFile.cs" />
     <Compile Include="StudentRedisFile.cs" />
     <Compile Include="StudentSPFile.cs" />

@@ -214,6 +214,15 @@ namespace WebApi.Common.Logic.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a localhost.
+        /// </summary>
+        public static string RedisConn {
+            get {
+                return ResourceManager.GetString("RedisConn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a es-ES.
         /// </summary>
         public static string Spanish {
@@ -382,6 +391,15 @@ namespace WebApi.Common.Logic.Properties {
         public static string Students {
             get {
                 return ResourceManager.GetString("Students", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a StudentsList.
+        /// </summary>
+        public static string StudentsList {
+            get {
+                return ResourceManager.GetString("StudentsList", resourceCulture);
             }
         }
         

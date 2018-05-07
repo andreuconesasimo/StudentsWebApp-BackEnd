@@ -270,4 +270,10 @@
   <data name="XmlFile" xml:space="preserve">
     <value>ListadoAlumnos.xml</value>
   </data>
+  <data name="RedisConn" xml:space="preserve">
+    <value>localhost</value>
+  </data>
+  <data name="StudentsList" xml:space="preserve">
+    <value>StudentsList</value>
+  </data>
 </root>
