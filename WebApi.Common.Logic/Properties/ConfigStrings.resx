@@ -247,14 +247,14 @@
   <data name="spUpdateByGuidQuery" xml:space="preserve">
     <value>CREATE PROCEDURE dbo.spUpdateByGuid @GUID nvarchar(50), 
                         @Nombre nvarchar(50), @Apellidos nvarchar(50), 
-                        @DNI nvarchar(50), @FechaNacimiento datetime2(7)  
+                        @DNI nvarchar(50), @FechaNacimiento datetime2(7), @Edad int
                          AS  
                         BEGIN  
                         UPDATE [dbo].[Students]  
                         SET Nombre = @Nombre,  
                         Apellidos = @Apellidos,  
                         DNI = @DNI,  
-                        FechaNacimiento = @FechaNacimiento                          
+                        FechaNacimiento = @FechaNacimiento, Edad = @Edad                      
                     WHERE GUID = @GUID  
                     END</value>
   </data>
@@ -271,7 +271,7 @@
     <value>ListadoAlumnos.xml</value>
   </data>
   <data name="RedisConn" xml:space="preserve">
-    <value>localhost</value>
+    <value>RedisConn</value>
   </data>
   <data name="StudentsList" xml:space="preserve">
     <value>StudentsList</value>

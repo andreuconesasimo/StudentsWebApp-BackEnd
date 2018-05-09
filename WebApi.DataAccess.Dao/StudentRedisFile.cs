@@ -23,6 +23,11 @@ namespace WebApi.DataAccess.Dao
             try
             {
                 logger.Debug(MethodBase.GetCurrentMethod().DeclaringType.Name + " " + LogStrings.Starts);
+                var redis = RedisStore.RedisCache;
+                var students = new List<Student>();
+                var key = ConfigStrings.StudentsList;
+                if (JsonConvert.DeserializeObject<List<Student>>(redis.StringGet(key)).Count == 0)
+                    redis.StringSet(ConfigStrings.StudentsList, JsonConvert.SerializeObject(students));
                 logger.Debug(MethodBase.GetCurrentMethod().DeclaringType.Name + " " + LogStrings.Ends);
             }
             catch (Exception ex)
@@ -39,7 +44,8 @@ namespace WebApi.DataAccess.Dao
                 var redis = RedisStore.RedisCache;
                 var students = GetAll();
                 students.Add(student);
-                redis.StringSet(ConfigStrings.StudentsList, JsonConvert.SerializeObject(students));
+                var std = JsonConvert.SerializeObject(students).ToString();
+                redis.StringSet(ConfigStrings.StudentsList, std);
                 logger.Debug(MethodBase.GetCurrentMethod().DeclaringType.Name + " " + LogStrings.Ends);
                 return student;
             }
@@ -71,19 +77,20 @@ namespace WebApi.DataAccess.Dao
 
         public List<Student> GetAll()
         {
+            List<Student> students = new List<Student>();
             try
             {
                 logger.Debug(MethodBase.GetCurrentMethod().DeclaringType.Name + " " + LogStrings.Starts);
-                var redis = RedisStore.RedisCache;
-                var key = ConfigStrings.StudentsList;
+                var redis = RedisStore.RedisCache;                            
+                students = JsonConvert.DeserializeObject<List<Student>>(redis.StringGet(ConfigStrings.StudentsList));                
                 logger.Debug(MethodBase.GetCurrentMethod().DeclaringType.Name + " " + LogStrings.Ends);
-                return JsonConvert.DeserializeObject<List<Student>>(redis.StringGet(key));
             }
             catch (Exception ex)
             {
                 logger.Exception(ex);
                 throw new DAOException(ex.Message, ex.InnerException);
             }
+            return students;
         }
 
         public List<Student> GetSingletonInstance()
@@ -105,8 +112,7 @@ namespace WebApi.DataAccess.Dao
         {
             try
             {
-                logger.Debug(MethodBase.GetCurrentMethod().DeclaringType.Name + " " + LogStrings.Starts);
-                var redis = RedisStore.RedisCache;
+                logger.Debug(MethodBase.GetCurrentMethod().DeclaringType.Name + " " + LogStrings.Starts);                
                 var students = GetAll();
                 var student = students.First(s => s.GUID == guid);
                 logger.Debug(MethodBase.GetCurrentMethod().DeclaringType.Name + " " + LogStrings.Ends);

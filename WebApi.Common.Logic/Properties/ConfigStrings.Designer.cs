@@ -214,7 +214,7 @@ namespace WebApi.Common.Logic.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a localhost.
+        ///   Busca una cadena traducida similar a RedisConn.
         /// </summary>
         public static string RedisConn {
             get {
@@ -370,14 +370,14 @@ namespace WebApi.Common.Logic.Properties {
         /// <summary>
         ///   Busca una cadena traducida similar a CREATE PROCEDURE dbo.spUpdateByGuid @GUID nvarchar(50), 
         ///                        @Nombre nvarchar(50), @Apellidos nvarchar(50), 
-        ///                        @DNI nvarchar(50), @FechaNacimiento datetime2(7)  
+        ///                        @DNI nvarchar(50), @FechaNacimiento datetime2(7), @Edad int
         ///                         AS  
         ///                        BEGIN  
         ///                        UPDATE [dbo].[Students]  
         ///                        SET Nombre = @Nombre,  
         ///                        Apellidos = @Apellidos,  
         ///                        DNI = @DNI,  
-        ///                        FechaNacimiento = @FechaNac [resto de la cadena truncado]&quot;;.
+        ///                        FechaNacimiento =  [resto de la cadena truncado]&quot;;.
         /// </summary>
         public static string spUpdateByGuidQuery {
             get {

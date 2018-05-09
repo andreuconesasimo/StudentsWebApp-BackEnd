@@ -10,9 +10,8 @@ namespace WebApi.DataAccess.Dao
         private static readonly Lazy<ConnectionMultiplexer> LazyConnection;
 
         static RedisStore()
-        {
-            string configurationOptions = ConfigurationManager.AppSettings[ConfigStrings.RedisConn].ToString();
-            LazyConnection = new Lazy<ConnectionMultiplexer>(() => ConnectionMultiplexer.Connect(configurationOptions));
+        {            
+            LazyConnection = new Lazy<ConnectionMultiplexer>(() => ConnectionMultiplexer.Connect(ConfigurationManager.AppSettings[ConfigStrings.RedisConn].ToString()));
         }
 
         public static ConnectionMultiplexer Connection => LazyConnection.Value;

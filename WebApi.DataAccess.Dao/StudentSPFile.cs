@@ -207,6 +207,7 @@ namespace WebApi.DataAccess.Dao
                         command.Parameters.AddWithValue("@Apellidos", alumno.Surname);
                         command.Parameters.AddWithValue("@DNI", alumno.DNI);
                         command.Parameters.AddWithValue("@FechaNacimiento", alumno.BirthDate);
+                        command.Parameters.AddWithValue("@Edad", alumno.Age);
                         command.ExecuteNonQuery();
                     }
                 }
