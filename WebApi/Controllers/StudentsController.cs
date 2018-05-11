@@ -8,7 +8,6 @@ using WebApi.Business.Logic;
 using WebApi.Common.Logic;
 using WebApi.Common.Logic.Enums;
 using WebApi.Common.Logic.Models;
-using WebApi.Exceptions;
 
 namespace StudentService.Controllers
 {
@@ -22,7 +21,7 @@ namespace StudentService.Controllers
             try
             {
                 this.studentBL = studentBL;
-                studentBL.SelectFileType(Extension.Redis);
+                studentBL.SelectFileType(Extension.SQL);
                 logger.Debug(MethodBase.GetCurrentMethod().DeclaringType.Name);
             }
             catch (Exception ex)

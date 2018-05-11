@@ -4,6 +4,7 @@ using Unity.Lifetime;
 using WebApi.Business.Logic;
 using WebApi.DataAccess.Dao;
 using WebApi.DataAccess.Dao.Interfaces;
+using WebApi.Common.Logic.Models;
 
 namespace WebApi
 {

@@ -4,7 +4,7 @@ using System.Web.Http.Dependencies;
 using Unity;
 using Unity.Exceptions;
 
-namespace WebApi
+namespace WebApi.Common.Logic.Models
 {
     public class UnityResolver: IDependencyResolver
     {

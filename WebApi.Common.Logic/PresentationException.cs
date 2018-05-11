@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace WebApi.Exceptions
+namespace WebApi.Common.Logic
 {
     public class PresentationException:Exception
     {
