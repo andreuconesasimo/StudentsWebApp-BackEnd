@@ -3,13 +3,13 @@
     self.students = ko.observableArray();
     self.error = ko.observable();
 
-    var studentsUri = '/api/Students/';
+    var studentsUri = '/api/Students';
 
     function ajaxHelper(uri, method, data) {
         self.error(''); // Clear error message
         return $.ajax({
             type: method,
-            url: uri,
+            url: studentsUri,
             dataType: 'json',
             contentType: 'application/json',
             data: data ? JSON.stringify(data) : null

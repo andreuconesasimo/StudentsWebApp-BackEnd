@@ -53,7 +53,7 @@ namespace StudentService.Controllers
 
         // GET: api/Students/5
         [ResponseType(typeof(Student))]
-        [HttpGet]
+        [HttpGet]        
         public async Task<Student> GetStudent(string guid)
         {
             try
